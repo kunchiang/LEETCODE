@@ -28,18 +28,28 @@
 #
 class Solution:
     def threeSum(self, nums):
+        nums_sorted = sorted(nums)
+        # print(nums_sorted)
         res = list()
-        for i in range(len(nums)):
-            f = nums[i]
-            for j in range(i+1, len(nums)):
-                s = nums[j]
-                for k in range(j+1, len(nums)):
-                    t = nums[k]
+        ex = set()
+        for i in range(len(nums_sorted)):
+            f = nums_sorted[i]
+            for j in range(i+1, len(nums_sorted)):
+                s = nums_sorted[j]
+                if (f,s) in ex or (s,f) in ex:
+                    continue
+                for k in range(len(nums_sorted)-1, j, -1):
+                    t = nums_sorted[k]
+                    if f+s+t < 0:
+                        break
                     if f+s+t == 0:
                         if sorted([f,s,t]) not in res:
                             res.append(sorted([f,s,t]))
+                            ex.add((f,s))
+                            ex.add((f,t))
         return res
 
-# sol = Solution()
-# nums = [-1, 0, 1, 2, -1, -4]
-# print(sol.threeSum(nums))
+sol = Solution()
+nums = [-1, 0, 1, 2, -1, -4]
+print(sol.threeSum(nums))
+
