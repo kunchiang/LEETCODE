@@ -30,6 +30,16 @@
 # 
 #
 class Solution:
-    def minDistance(self, word1: str, word2: str) -> int:
-        
+    def minDistance(self, word1, word2):
+        if not word1 or not word2:
+            return max(len(word1), len(word2))
+
+w1 = "sezs"
+w2 = "ezt"
+
+sol = Solution()
+res = sol.minDistance(w1, w2)
+print(res)
+
+
 
