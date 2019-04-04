@@ -31,15 +31,30 @@
 #
 class Solution:
     def minDistance(self, word1, word2):
+        # 当某个单词为空，直接返回另一个单词的长度
         if not word1 or not word2:
             return max(len(word1), len(word2))
+        m = len(word1)
+        n = len(word2)
+        # dp[i][j]表示word1[0,...,i-1]和word2[0,...,j-1]的最长公共子序列长度
+        dp = [[0]*(n+1)]*(m+1) # np.zeros((m+1,n+1))
+        # 动态规划
+        for i in range(1, m+1):
+            count = 0
+            for j in range(1, n+1):
+                if word1[i-1] == word2[j-1]:
+                    # print("i:{}, j:{}, char:{}".format(i-1,j-1,word1[i-1]))
+                    dp[i][j] = dp[i-1][j-1]+1
+                else:
+                    dp[i][j] = max(dp[i][j-1], dp[i-1][j])
+        # print(dp[m][n])
+        return int(m+n-2*dp[m][n])
 
-w1 = "sezs"
-w2 = "ezt"
+
+w1 = "inte"
+w2 = "exe"
 
 sol = Solution()
 res = sol.minDistance(w1, w2)
 print(res)
-
-
 
