@@ -1,8 +1,15 @@
 # LEETCODE
 Personal LeetCode Solutions
 
-- [8] 字符串转换整数 (atoi)：纯粹规则性的问题，要啥技巧？medium AC；Python；beat 96%
+- [8] 字符串转换整数 (atoi)：
+    - 纯粹规则性的问题，要啥技巧？
+    - medium AC
+    - beats 96%
 - [9] 回文数：未将整数转为字符串；easy AC
+- [11] 盛最多水的容器；
+    - 一次遍历解决问题；暴力搜索需两层循环，超时
+    - medium AC
+    - beats 39%
 - [13] 罗马数字转整数：easy AC
 - [14] 最长公共前缀：easy AC
 - [20] 有效的括号：easy AC
