@@ -39,6 +39,7 @@ class Solution:
         while i<j:
             tmp = (j - i)*min(height[i], height[j])
             res = max(res, tmp)
+            # 两个指针中数值较小的那个向内侧移动
             if height[i] < height[j]:
                 i += 1
             else:
