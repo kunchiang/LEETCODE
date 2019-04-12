@@ -37,10 +37,12 @@ class Solution:
         m = len(word1)
         n = len(word2)
         # dp[i][j]表示word1[0,...,i-1]和word2[0,...,j-1]的最长公共子序列长度
-        dp = [[0]*(n+1)]*(m+1) # np.zeros((m+1,n+1))
+        # dp = [[0]*(n+1)]*(m+1) : 这是错误的初始化方式！！
+        # # np.zeros((m+1,n+1))
+        dp = [[0 for i in range(n+1)] for j in range(m+1)]
         # 动态规划
         for i in range(1, m+1):
-            count = 0
+            # count = 0
             for j in range(1, n+1):
                 if word1[i-1] == word2[j-1]:
                     # print("i:{}, j:{}, char:{}".format(i-1,j-1,word1[i-1]))
@@ -51,10 +53,10 @@ class Solution:
         return int(m+n-2*dp[m][n])
 
 
-w1 = "inte"
-w2 = "exe"
+# w1 = "inte"
+# w2 = "exe"
 
-sol = Solution()
-res = sol.minDistance(w1, w2)
-print(res)
+# sol = Solution()
+# res = sol.minDistance(w1, w2)
+# print(res)
 
