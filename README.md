@@ -18,3 +18,7 @@ Personal LeetCode Solutions
 - [28] 实现strStr()：easy AC
 - [35] 搜索插入位置：easy AC
 - [121] 买卖股票的最佳时机：easy AC
+- [583] 两个字符串的删除操作:
+    - 居然被矩阵初始化问题搞了半天……
+    - medium AC
+    - beat 15%
